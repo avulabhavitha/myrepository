@@ -1,0 +1,35 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option enforcedvalues='true' name='action' required='true' valuesUrl='file:/root/sample.json' />
+      </options>
+    </context>
+    <defaultTab>summary</defaultTab>
+    <description>action on apache</description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>action</group>
+    <id>49ec8154-755e-44ed-8e2f-782eb537df7d</id>
+    <loglevel>INFO</loglevel>
+    <name>action_on_apache</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>tags: web</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>service apache2 ${option.action}</exec>
+      </command>
+    </sequence>
+    <uuid>49ec8154-755e-44ed-8e2f-782eb537df7d</uuid>
+  </job>
+</joblist>
